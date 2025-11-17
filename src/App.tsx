@@ -48,6 +48,19 @@ const App=(): JSX.Element =>{
       setTodos(newTodos)
     }
 
+    const handleUpdateTitle = ({id, title}: Pick<TodoType, 'id' | 'title'>): void => {
+      const newTodos = todos.map(todo => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            title
+          }
+        }
+        return todo
+      })
+      setTodos(newTodos)
+    }
+
     const handleFilterChange=(filter:FilterValue):void=>{
       setFilterSelected(filter)
     }
@@ -70,7 +83,7 @@ const App=(): JSX.Element =>{
     const handleAddTodo=({title}:TodoTitle):void =>{
       const newTodo={
         title,
-        id: crypto.randomUUID,
+        id: crypto.randomUUID(),
         completed: false
       }
       const newTodos=[... todos,newTodo]
@@ -82,6 +95,7 @@ const App=(): JSX.Element =>{
       <Todos
       onToggleCompleteTodo={handleCompleted}
       onRemoveTodo={handleRemove}
+      onUpdateTitle={handleUpdateTitle}
       todos={filteredTodos}/>
       <Footer
         activeCount={activeCount}
