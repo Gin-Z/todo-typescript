@@ -4,6 +4,7 @@ import { Footer } from "./components/Footer.tsx"
 import { Header } from "./components/Header.tsx"
 import { useTodos } from "./hooks/useTodos.ts"
 import { useFilters } from "./hooks/useFilters.ts"
+import { Copyright } from "./components/Copyright.tsx"
 
 const App = (): JSX.Element => {
   const {
@@ -38,6 +39,7 @@ const App = (): JSX.Element => {
         completedCount={completedCount}
         onClearCompleted={handleRemoveCompleted}
       />
+      <Copyright />
     </div>
   )
 }
