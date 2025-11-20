@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { type FilterValue, type Todo } from "../types"
+import type { FilterValue, Todo } from "../types.d.ts"
 import { TODO_FILTERS } from "../consts"
 
 export const useFilters = (todos: Todo[]) => {

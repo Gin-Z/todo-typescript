@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { type Todo, type TodoId, type TodoTitle } from "../types"
+import type { Todo, TodoId, TodoTitle } from "../types.d.ts"
 
 const mockTodos: Todo[] = [
   {

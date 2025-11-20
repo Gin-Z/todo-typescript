@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { type TodoId, type Todo as TodoType } from '../types'
+import type { TodoId, Todo as TodoType } from '../types.d.ts'
 
 interface Props extends TodoType{
     onToggleCompleteTodo: ({id,completed}:Pick<TodoType, 'id' | 'completed'>)=>void
